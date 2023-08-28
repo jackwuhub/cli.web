@@ -1,0 +1,24 @@
+{
+  "web": {
+    "admin": {
+      "Vue3": {
+
+      }
+    },
+    "datav": {
+      "Vue3": ""
+    },
+    "h5": {
+      "Vue3": ""
+    },
+    "wechat-mini-program":{
+
+    }
+  },
+  "component": {
+
+  },
+  "utils": {
+
+  }
+}
