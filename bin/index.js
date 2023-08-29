@@ -35,6 +35,6 @@ programRegister(program,{
     // 查看目录结构
     dir: (dir) => showDirTree(dir),
     // 手动更新项目
-    upgrade: () => updateChk(true)
+    upgrade: () => updateChk()
 })
 
