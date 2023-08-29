@@ -27,14 +27,14 @@ programRegister(program,{
 
         const res = await confirmCreate() // 确认创建
         if(res) { // 校验参数, 准备下载
-            const res = await download({projectName,repo})
-            showDirTree(res)
+            const filePath = await download({projectName,repo})
+            if(filePath) showDirTree(filePath)
         }
 
     },
     // 查看目录结构
     dir: (dir) => showDirTree(dir),
     // 手动更新项目
-    upgrade: () => updateChk()
+    upgrade: () => updateChk(true)
 })
 
