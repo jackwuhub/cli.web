@@ -17,7 +17,9 @@ programRegister(program,{
         const hasUpgrade = await updateChk() // 检查更新
         if(hasUpgrade) return // 拦截
         // 加载
-        const { repo } =  await create(await getRepoConfig(true)) // form信息
+        const config = await getRepoConfig(true)
+        const { repo } =  await create(config) // form信息
+        if(!repo) return
         const path = `./${projectName}`
         if(directoryExists(path)){ // 同名目录
             const res = await confirmRemake() // 是否删除
