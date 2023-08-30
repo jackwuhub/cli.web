@@ -1,0 +1,19 @@
+.container-fade {
+  &-enter{
+    &-active{
+      animation: bounceInLeft ease-in-out 1s;
+    }
+  }
+  &-leave{
+
+    &-active{
+      position: absolute;
+      width: 100%;
+      animation: bounceOutRight ease-in-out .5s;
+    }
+    &-to{
+      opacity: 0;
+      transform: translate(100%);
+    }
+  }
+}
