@@ -17,13 +17,14 @@
                             "message": "请选择UI组件库",
                             "choices": [
                                 {
-                                    "title": "Null UI",
-                                    "description": "不使用UI库"
+                                    "title": "No UI",
+                                    "description": "不使用UI库",
+                                    "value": "web-admin-vue3::https://gitee.com/wuguangshuai/cli.web.node.git"
                                 },
                                 {
                                     "title": "(推荐)TDesignUI",
                                     "description": "腾讯团队最新出品UI库",
-                                    "value": "master::https://gitee.com/wuguangshuai/template.admin.vue3.tdsign.git"
+                                    "value": "web-admin-vue3-tdsign::https://gitee.com/wuguangshuai/cli.web.node.git"
                                 },
                                 {
                                     "title": "elementUI",
@@ -77,13 +78,14 @@
                             "message": "请选择UI组件库",
                             "choices": [
                                 {
-                                    "title": "Null UI",
-                                    "description": "不使用UI库"
+                                    "title": "No UI",
+                                    "description": "不使用UI库",
+                                    "value": "web-h5-vue3::https://gitee.com/wuguangshuai/cli.web.node.git"
                                 },
                                 {
                                     "title": "(推荐)TDesignUI-mobile",
                                     "description": "腾讯团队最新出品UI库",
-                                    "value": "master::https://gitee.com/wuguangshuai/template.h5.vue3.tdsign.git"
+                                    "value": "web-h5-vue3-tdsign::https://gitee.com/wuguangshuai/cli.web.node.git"
                                 },
                                 {
                                     "title": "vantUI",
@@ -126,13 +128,14 @@
                     "description": "微信小程序项目, 暂不支持第三方框架",
                     "choices": [
                         {
-                            "title": "Null UI",
-                            "description": "不使用UI库"
+                            "title": "No UI",
+                            "description": "不使用UI库",
+                            "value": "web-wechat::https://gitee.com/wuguangshuai/cli.web.node.git"
                         },
                         {
                             "title": "(推荐)TDesignUIMiniProgram",
                             "description": "腾讯团队最新出品UI库",
-                            "value": "master::https://gitee.com/wuguangshuai/template.wechat.tdsign.git"
+                            "value": "web-wechat-tdsign::https://gitee.com/wuguangshuai/cli.web.node.git"
                         },
                         {
                             "title": "VantUI",
