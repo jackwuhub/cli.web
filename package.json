@@ -21,7 +21,8 @@
     "update-notifier": "5"
   },
   "scripts": {
-    "dev": "node ./bin/index.js create test"
+    "dev": "node ./bin/index.js create test",
+    "dev:test": "node ./bin/index.js -v"
   },
   "main": "./bin/index.js",
   "typings": "dist/index.d.ts",
