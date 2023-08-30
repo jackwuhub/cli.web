@@ -1,6 +1,6 @@
 # Wechat-MiniProgram-Template
 
-##架构 typescript + TDesignUI + Less
+## 架构 typescript + TDesignUI + Less
 
 ## 功能（基础）
 > - request二次封装, 采用映射APIEnum方式
