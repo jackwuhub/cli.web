@@ -5,12 +5,11 @@
   "main": "index.d.ts",
   "scripts": {},
   "keywords": [],
-  "author": "",
+  "author": "吳廣帥",
   "license": "",
   "dependencies": {
     "dayjs": "^1.11.7",
     "json-bigint": "^1.0.0",
-    "tdesign-miniprogram": "^1.0.0-rc.1",
     "miniprogram-api-typings": "^3.9.0"
   }
 }

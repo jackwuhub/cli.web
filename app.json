@@ -34,6 +34,6 @@
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-    "t-button": "tdesign-miniprogram/button/button"
+
   }
 }
