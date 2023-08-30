@@ -1,0 +1,10 @@
+var filterListBySortIndex = function(list, sortIndex) {
+    var result = [];
+    for (var i = 0; i < list.length; i++) {
+        if (list[i].sortIndex == sortIndex) {
+            result.push(list[i]);
+        }
+    }
+    return result;
+};
+module.exports.filterListBySortIndex = filterListBySortIndex

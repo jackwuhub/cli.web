@@ -1,0 +1,29 @@
+<wxs src="index.wxs" module="wxs"/>
+<scroll-view bindscroll="scrollBox" enable-flex class="select-book" scroll-into-view="{{ scrollIntoView }}"  scroll-y enhanced show-scrollbar="{{ false }}" >
+    <view class="select-book">
+        <slot></slot>
+        <!--  主体  -->
+        <view class="select-book-body" >
+            <view class="select-book-body__card" wx:for="{{ sortIndex }}" wx:key="index">
+                <view class="select-book-body__row select-book-body__row__sort-index item-row" id="{{ item }}">{{ item }}</view>
+                <view class="select-book-body__row" data-item="{{ item }}" bindtap="handleClick" hover-class="common-hover" wx:key="index" wx:for="{{ wxs.filterListBySortIndex(books,item) }}">
+                    {{ item.name }}
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<!--  索引条  -->
+<view class="select-book__sort-bar" >
+    <view data-sort-by="{{ item }}"
+           bindtap="clickSort"
+           bind:touchstart="handleTouchStart"
+           catch:touchmove="handleTouch"
+          bind:touchend="handleTouchEnd"
+           class="select-book__sort-bar__item {{sortBy === item ? 'select-book__sort-bar__item-active' : ''}}"
+           wx:for="{{ sortIndex }}"
+           wx:key="index">
+        {{ item }}
+        <view class="select-book__sort-bar__tool-tip" wx:if="{{ sortBy === item && showTip }}">{{ item }}</view>
+    </view>
+</view>

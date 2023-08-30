@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/mainPack/home/index"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/homePack/",
+      "name": "homePack",
+      "pages": [
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/mainPack/home/index": {
+      "network": "all",
+      "packages": [
+      ]
+    }
+  },
+  "resolveAlias": {
+    "@/*": "/*"
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "darkmode": true,
+  "themeLocation":"theme.json",
+  "window": {
+    "navigationBarBackgroundColor": "@navBgColor",
+    "navigationBarTextStyle": "@navTxtStyle",
+    "backgroundColor": "@bgColor",
+    "backgroundTextStyle": "@bgTxtStyle",
+    "backgroundColorTop": "@bgColorTop",
+    "backgroundColorBottom": "@bgColorBottom",
+    "navigationBarTitleText": "WeiXin"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "t-button": "tdesign-miniprogram/button/button"
+  }
+}
