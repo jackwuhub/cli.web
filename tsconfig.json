@@ -19,7 +19,6 @@
     "lib": ["ES2020"],
     "baseUrl": ".",
     "paths": {
-      "tdesign-miniprogram/*":["./miniprogram_npm/tdesign-miniprogram/*"],
       "@/*": ["./*"]
     }
   },
