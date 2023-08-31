@@ -8,3 +8,11 @@ export declare type MergeChild = (arr:any[], parentKey:string, childKey: string)
 export declare type OmitChildByKey = (arr:any[], parentKey:string, childKey?: string) => any[]
 
 export declare type OmitArrayByKey = (arr:any[], keyValue:AnyObject<any> ) => any[]
+
+
+export declare type FindTreeRoute = (
+    tree:any[],
+    valueKeyName: string,
+    childName:string,
+    value: any
+) => any[]

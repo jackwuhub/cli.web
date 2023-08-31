@@ -1,5 +1,6 @@
 import {AsideMenuItem} from "@/layouts/components/AsideMenu/types";
 import {RouterRaw} from "@/router/@types";
+import {MapToken, SeedToken} from "ant-design-vue/es/theme/interface";
 
 export interface UserState { // 用户store
     userInfo: {
@@ -25,5 +26,5 @@ export interface SettingState {
         collapse: boolean
         menuList: AsideMenuItem[]
     },
-    theme: 'light' | 'dark'
+    theme: { algorithm: (designToken: SeedToken, derivativeToken?: MapToken) => MapToken };
 }

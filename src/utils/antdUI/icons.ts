@@ -1,9 +1,9 @@
-export type IconName = keyof typeof ElIconEnum
+export type IconName = keyof typeof AIconEnum
 type GetIcon = (key: IconName) => VNode
-export const iconVNode:GetIcon = (key) => ElIconEnum?.[key]
+export const iconVNode:GetIcon = (key) => AIconEnum?.[key]
 import {App, defineComponent, h, VNode} from "vue";
 export default (app:App) => {
-    app.component('el-icon',{
+    app.component('a-icon',{
         props:['name'],
         setup(props){
             return () => h(defineComponent({
@@ -14,15 +14,9 @@ export default (app:App) => {
 }
 
 import {
-    Lock,
-    Plus,
-    User,
-    House
-} from '@element-plus/icons-vue'
+    MailOutlined,
+} from '@ant-design/icons-vue'
 
-export const ElIconEnum = (() => ({
-    plus: h(Plus),
-    house: h(House),
-    user: h(User),
-    logout: h(Lock)
+export const AIconEnum = (() => ({
+    mail: h(MailOutlined),
 }))()

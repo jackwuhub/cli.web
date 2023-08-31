@@ -1,72 +1,66 @@
-import {defineComponent, VNode, computed, h} from "vue";
-import { ElMenu,ElMenuItem,ElSubMenu } from 'element-plus'
+import {computed, defineComponent, h, ref, VNode, watchEffect} from "vue";
+import {ItemType, Menu} from 'ant-design-vue'
 import {AsideMenuItem} from "../AsideMenu/types";
-import {useRoute} from "vue-router";
+import {useRoute, useRouter} from "vue-router";
 import {settingStore} from "@/store";
-import { ElIcon } from 'element-plus'
-import {IconName, iconVNode} from "@/utils/elementUI/icons";
-/** 检查是否是菜单组 */
-export const isMenuGroup = (menuItem:AsideMenuItem):boolean => !!(menuItem.children && !!menuItem.children?.length)
+import {IconName, iconVNode} from "@/utils/antdUI/icons";
+import {Key} from "ant-design-vue/es/_util/type";
+import { MenuInfo} from "ant-design-vue/es/menu/src/interface";
+import {findTreeRoute} from "@/helper/index";
+
+
+
 /** 渲染图标 */
 const renderIcon = (menuItem: AsideMenuItem):VNode | undefined => {
     if (menuItem.icon) return h(iconVNode(menuItem.icon as unknown as IconName))
 }
-/** 渲染菜单组 */
-const renderSubMenu = (menuItem: AsideMenuItem, children: VNode[]): VNode => (
-    <ElSubMenu index={menuItem.route}>
-        {{
-            title: () => (
-                <>
-                    <ElIcon> {renderIcon(menuItem)}</ElIcon>
-                    <span>{menuItem.title}</span>
-                </>
-            ),
-            default: () => children
-        }}
-    </ElSubMenu>
-)
-/** 渲染子项 */
-const renderMenuItem = (menuItem: AsideMenuItem): VNode => {
-    return (
-        <ElMenuItem index={menuItem.route}>
-            <>
-                <ElIcon> {renderIcon(menuItem)}</ElIcon>
-                <span>{menuItem.title}</span>
-            </>
-        </ElMenuItem>
-    )
-}
 /** 解析菜单数据 */
-const parseMenuData = (menuData: AsideMenuItem[]): VNode[] => {
-    const deepMenuChildren = (menuItems: AsideMenuItem[] | undefined) => {
-        let menuTemplate: any[] = []
-        if (!menuItems) return menuTemplate
-        menuItems.forEach((menuItem: AsideMenuItem) => {
-            if (isMenuGroup(menuItem)) { // 是按钮组
-                menuTemplate.push(
-                    renderSubMenu(menuItem, deepMenuChildren(menuItem?.children) ?? [])
-                )
-            } else menuTemplate.push(renderMenuItem(menuItem)) // 是按钮
-        })
-        return menuTemplate
+const parseMenuData = (menuData: AsideMenuItem[]): ItemType[] => {
+    const deepMenuChildren = (menuItems: AsideMenuItem[] | undefined):ItemType[] | null => {
+        if (!menuItems) return null
+        return menuItems?.map((menuItem: AsideMenuItem) => ({
+            key: menuItem.route,
+            icon: renderIcon(menuItem),
+            label: menuItem.title,
+            children: deepMenuChildren(menuItem.children?.length
+                ?  menuItem.children
+                : void 0
+            )
+        }))
     }
-    return deepMenuChildren(menuData)
+    return deepMenuChildren(menuData) ?? []
 }
 
+const findKeys = (key:string, routes:ItemType[]):Key[] => {
+    let keys:Key[] = []
+    const path = findTreeRoute(routes,'key','children',key)
+    keys = path?.map(ele => ele.key)
+    return keys
+}
 // 构建组件
 export default defineComponent({
-    props: ['collapse'],
-    setup: (props:any) => {
+    setup: () => {
         const route = useRoute()
-        const active = computed(() => route.path)
+        const router = useRouter()
+
+        const selectedKeys = computed(() => findKeys(route.path,routes)) // 激活的key
+        const openKeys = ref<Key[]>([]) // 展开的菜单keys, 只处理一次
+        const routes = parseMenuData(settingStore.menuList) // 路由表
+        const goRoute = (event:MenuInfo) => router.push({path: event.key as string}) // 跳转路由
+        const stopOpenKeysWatcher = watchEffect(() => {
+            if(!openKeys.value.length) openKeys.value = selectedKeys.value
+            else stopOpenKeysWatcher()
+        })
         return () => (
-            <ElMenu
-                collapse={props.collapse}
-                default-active={active.value}
-                router
+            <Menu
+                selectable={false}
+                onClick={goRoute}
+                openKeys={openKeys.value}
+                selectedKeys={selectedKeys.value}
+                mode="inline"
+                items={routes}
             >
-                {parseMenuData(settingStore.menuList)}
-            </ElMenu>
+            </Menu>
         )
     }
 })

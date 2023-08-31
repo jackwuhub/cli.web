@@ -2,6 +2,7 @@
 .user {
   cursor: pointer;
   &_wrapper {
+    width: 140px;
     &_info {
       text-align: center;
       &_name{
@@ -15,7 +16,7 @@
     display: flex;
     flex-flow: column wrap;
     margin-top: 10px;
-    color: var(--el-color-primary-rgb);
+
     &_operation {
       border-radius: 10px;
       &_item {
@@ -28,7 +29,7 @@
           font-size: 16px;
           width: 16px;
           height: 16px;
-          color: var(--el-color-primary);
+
           line-height: 16px;
         }
         &_label{
@@ -38,7 +39,7 @@
       }
       &:hover {
         background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
-        color: var(--el-color-white);
+        color: #fff;
       }
     }
   }
@@ -56,37 +57,35 @@
 </style>
 <template>
   <div class="user">
-    <el-popover placement="bottom" showArrow>
-      <template #reference>
-        <el-avatar alt="头像" :src="info.avatar" size="default">{{info.avatarText}}</el-avatar>
-      </template>
-      <div class="user_wrapper">
-        <!-- 基本信息 -->
-        <div class="user_wrapper_info">
-          <el-avatar alt="头像" :src="info.avatar" size="large">{{info.avatarText}}</el-avatar>
-          <div class="user_wrapper_info_name">{{ info.name }}</div>
-        </div>
-      </div>
-      <div class="user_list">
-        <!-- 操作列表 -->
-        <div  class="user_list_operation">
-          <div class="user_list_operation_item" @click="accountCenter">
-            <el-icon class="user_list_operation_item_icon" name="user"></el-icon>
-            <span class="user_list_operation_item_label">个人中心</span>
+    <a-popover placement="bottomRight" showArrow>
+      <template #content>
+        <div class="user_wrapper">
+          <!-- 基本信息 -->
+          <div class="user_wrapper_info">
+            <a-avatar alt="头像" :src="info.avatar" size="large">{{info.avatarText}}</a-avatar>
+            <div class="user_wrapper_info_name">{{ info.name }}</div>
           </div>
         </div>
-        <div  class="user_list_operation">
-          <el-popconfirm title="确认退出?" @confirm="handleOut">
-            <template #reference>
+        <div class="user_list">
+          <!-- 操作列表 -->
+          <div  class="user_list_operation">
+            <div class="user_list_operation_item" @click="accountCenter">
+              <a-icon class="user_list_operation_item_icon" name="email"></a-icon>
+              <span class="user_list_operation_item_label">个人中心</span>
+            </div>
+          </div>
+          <div class="user_list_operation">
+            <a-popconfirm title="确认退出?" @confirm="handleOut">
               <div class="user_list_operation_item" >
-                <el-icon class="user_list_operation_item_icon" name="logout"></el-icon>
+                <a-icon class="user_list_operation_item_icon" name="logout"></a-icon>
                 <span class="user_list_operation_item_label">退出系统</span>
               </div>
-            </template>
-          </el-popconfirm>
+            </a-popconfirm>
+          </div>
         </div>
-      </div>
-    </el-popover>
+      </template>
+      <a-avatar alt="头像" :src="info.avatar" size="default">{{info.avatarText}}</a-avatar>
+    </a-popover>
   </div>
 </template>
 

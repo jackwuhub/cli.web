@@ -1,5 +1,6 @@
 import {defineStore} from "pinia";
 import {SettingState} from "./@types/index";
+import {theme} from "ant-design-vue";
 
 export default defineStore({
     id:'setting',
@@ -8,7 +9,10 @@ export default defineStore({
             collapse: false,
             menuList: [],
         },
-        theme: 'light'
+        theme: {
+            algorithm:theme.defaultAlgorithm
+        },
+
     }),
     getters:{
         /** get 折叠 */
@@ -23,10 +27,10 @@ export default defineStore({
         toggleCollapse() { this.menu.collapse = !this.menu.collapse },
         /** 设置menu */
         setMenuList(menuList:any[] = []){ this.menu.menuList = menuList },
-        /** 设置主题 */
-        setTheme(theme:'light' | 'dark'){
-            document.documentElement.setAttribute('class',theme)
-            this.theme = theme
-        }
+        /** 设置主题模式 */
+        setThemeMode(mode: 'light' | 'dark'){
+            if(mode === 'light') this.theme.algorithm = theme.defaultAlgorithm
+            else this.theme.algorithm = theme.darkAlgorithm
+        },
     }
 })

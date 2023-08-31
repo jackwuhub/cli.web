@@ -10,25 +10,26 @@
 </style>
 <template>
   <div class="changeTheme">
-    <el-switch
-        :modelValue="isLight"
-        @update:modelValue="handleChangeTheme"
-        active-text="黑"
-        inactive-text="白"
+    <a-switch
+        :checked="!isLight"
+        @update:checked="handleChangeTheme"
+        checked-children="黑"
+        un-checked-children="白"
         inline-prompt
     >
-    </el-switch>
+    </a-switch>
   </div>
 </template>
 
 <script lang="ts" setup>
 import {computed, ComputedRef, onMounted} from "vue";
 import {settingStore} from "@/store";
+import {theme} from "ant-design-vue";
 
-const isLight:ComputedRef<boolean> = computed(() => settingStore.theme === 'dark')
-const handleChangeTheme = (val:boolean | string | number):any => {
+const isLight:ComputedRef<boolean> = computed(() => settingStore.theme?.algorithm === theme.defaultAlgorithm)
+const handleChangeTheme = (val:boolean):any => {
   const theme: 'light' | 'dark' = String(val) === 'true' ? 'dark' : 'light'
-  settingStore.setTheme(theme)
+  settingStore.setThemeMode(theme)
   window.localStorage.setItem('theme',theme)
 }
 onMounted(() => {

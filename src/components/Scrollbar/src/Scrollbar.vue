@@ -123,7 +123,6 @@
     &__wrap {
       height: 100%;
       overflow: auto;
-      background: var(--td-bg-color-container);
       &--hidden-default {
         scrollbar-width: none;
 

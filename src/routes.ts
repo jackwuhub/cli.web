@@ -23,31 +23,31 @@ export const dynamicRoutes :Array<RouterRaw> = [
     {
         path:'/',
         name:'home',
-        meta:{ title:'首页',layout: LayoutEnum.admin,icon: 'house' },
+        meta:{ title:'首页',layout: LayoutEnum.admin,icon: 'mail' },
         component: () => import('@/pages/home/index.vue')
     },
     {
         path:'/system',
         name: 'system',
-        meta: { title: '系统管理',icon: 'user'},
+        meta: { title: '系统管理',icon: 'mail'},
         redirect:'/system/user',
         children:[
             {
                 path:'/system/user',
                 name: 'systemUser',
-                meta: { title:'用户管理', layout: LayoutEnum.admin,icon: 'user'},
+                meta: { title:'用户管理', layout: LayoutEnum.admin,icon: 'mail'},
                 component: () => import('@/pages/system/user/index.vue')
             },
             {
                 path:'/system/role',
                 name: 'systemRole',
-                meta: { title:'角色管理', layout: LayoutEnum.admin,icon: 'user' },
+                meta: { title:'角色管理', layout: LayoutEnum.admin,icon: 'mail' },
                 component: () => import('@/pages/system/role/index.vue')
             },
             {
                 path:'/system/department',
                 name: 'systemDept',
-                meta: { title:'部门管理', layout: LayoutEnum.admin,icon: 'user' },
+                meta: { title:'部门管理', layout: LayoutEnum.admin,icon: 'mail' },
                 component: () => import('@/pages/system/department/index.vue')
             },
         ]
@@ -55,25 +55,25 @@ export const dynamicRoutes :Array<RouterRaw> = [
     {
         path:'/system4',
         name: 'system1',
-        meta: { title: '系统管理',icon: 'user'},
+        meta: { title: '系统管理',icon: 'mail'},
         redirect:'/system/user',
         children:[
             {
                 path:'/system/user1',
                 name: 'systemUser2',
-                meta: { title:'用户管理', layout: LayoutEnum.admin,icon: 'user'},
+                meta: { title:'用户管理', layout: LayoutEnum.admin,icon: 'mail'},
                 component: () => import('@/pages/system/user/index.vue')
             },
             {
                 path:'/system/role2',
                 name: 'systemRole3',
-                meta: { title:'角色管理', layout: LayoutEnum.admin,icon: 'user' },
+                meta: { title:'角色管理', layout: LayoutEnum.admin,icon: 'mail' },
                 component: () => import('@/pages/system/role/index.vue')
             },
             {
                 path:'/system/department3',
                 name: 'systemDept4',
-                meta: { title:'部门管理', layout: LayoutEnum.admin,icon: 'user' },
+                meta: { title:'部门管理', layout: LayoutEnum.admin,icon: 'mail' },
                 component: () => import('@/pages/system/department/index.vue')
             },
         ]

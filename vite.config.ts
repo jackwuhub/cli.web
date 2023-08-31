@@ -1,6 +1,8 @@
 import {UserConfig, ConfigEnv, loadEnv, ProxyOptions, splitVendorChunkPlugin} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsxPlugin from "@vitejs/plugin-vue-jsx";
+import { theme } from 'ant-design-vue';
+
 //@ts-ignore
 import path from 'path'
 
@@ -24,6 +26,9 @@ const makeProxy = (proxyList: Array<ProxyItem>) => {
         }
     }), {})
 }
+const { defaultAlgorithm, defaultSeed } = theme;
+
+const mapToken = defaultAlgorithm(defaultSeed);
 export default ({command, mode}: ConfigEnv): UserConfig => {
     const root = process.cwd();
     const env = loadEnv(mode, root)
@@ -55,5 +60,12 @@ export default ({command, mode}: ConfigEnv): UserConfig => {
             vueJsxPlugin(),
         ],
         clearScreen: true,
+        css:{
+            preprocessorOptions:{
+                less: {
+                    modifyVars: mapToken,
+                }
+            }
+        }
     }
 }

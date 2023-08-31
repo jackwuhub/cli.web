@@ -1,5 +1,5 @@
 import {isType, removeObjectKey} from "./object";
-import {GroupBy, MergeChild, OmitArrayByKey, OmitChildByKey} from "./@types/array";
+import {FindTreeRoute, GroupBy, MergeChild, OmitArrayByKey, OmitChildByKey} from "./@types/array";
 
 /**
  * 数组分组
@@ -57,4 +57,34 @@ export const omitChildByKey:OmitChildByKey = (arr, parentKey, childKey = 'child'
     else list[findIndex][childKey] = list?.[findIndex]?.[childKey].concat( removeObjectKey(ele, parentKey)) ?? []
   })
   return list
+}
+
+/**
+ * 给定value，解析树的路径
+ * @param tree
+ * @param valueKeyName
+ * @param childName
+ * @param value
+ */
+export const findTreeRoute:FindTreeRoute = (
+    tree,
+    valueKeyName,
+    childName,
+    value
+) => {
+  let path: any[] = []
+  if (!tree || tree && !tree.length) return path
+  for (let i = 0; i < tree.length; i++) {
+    const item = tree?.[i]
+    const itemValue = item?.[valueKeyName]
+    const itemChild = item?.[childName] as unknown as []
+    path.push(item)
+    if (String(itemValue) === String(value)) break
+    const childPath = findTreeRoute(itemChild, valueKeyName, childName, value)
+    if (childPath.length) {
+      path = path.concat(childPath)
+      break
+    } else path.pop()
+  }
+  return path
 }

@@ -9,14 +9,9 @@
     overflow: hidden;
     transition: width ease-in-out .3s;
     flex-shrink: 0;
-    width: var(--admin-layout-aside-default-width);
-    &-collapse{
-      width: var(--admin-layout-aside-collapse-width);
-    }
     &__menu{
-      height: calc(100% - var(--admin-layout-header-height));
+      height: calc(100% - 48px - var(--admin-layout-header-height));
     }
-    background: var(--td-bg-color-container);
   }
   &__main{
     position: relative;
@@ -24,19 +19,18 @@
     overflow: hidden;
     padding: 10px;
     height: 100%;
-    background: var(--el-card-bg-color);
   }
 }
 </style>
 
 <template>
-  <AsideContent :lock-scroll="props.lockScroll">
+  <AsideContent :lock-scroll="props.lockScroll" collapsible lockAsideScroll>
     <template #aside>
       <div class="admin-layout__aside" :class="{'admin-layout__aside-collapse': settingStore.collapse}">
         <Logo :collapse="settingStore.collapse"/>
-        <el-scrollbar class="admin-layout__aside__menu">
+        <ScrollBar class="admin-layout__aside__menu">
           <Menu :collapse="settingStore.collapse" />
-        </el-scrollbar>
+        </ScrollBar>
       </div>
     </template>
     <template #header>
