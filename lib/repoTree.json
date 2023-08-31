@@ -28,11 +28,13 @@
                                 },
                                 {
                                     "title": "elementUI",
-                                    "description": "饿了么团队出品的UI库"
+                                    "description": "饿了么团队出品的UI库",
+                                    "value": "web-admin-vue3-element::https://gitee.com/wuguangshuai/cli.web.node.git"
                                 },
                                 {
                                     "title": "ant-design-vue",
-                                    "description": "antd社区版出品"
+                                    "description": "antd社区版出品",
+                                    "value": "web-admin-vue3-antd::https://gitee.com/wuguangshuai/cli.web.node.git"
                                 }
                             ]
                         },
