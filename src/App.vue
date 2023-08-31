@@ -1,6 +1,8 @@
 
 <template>
-  <component :is="layout" :key="layoutId" v-bind="layoutOption"></component>
+  <el-config-provider :locale="zhCn">
+    <component :is="layout" :key="layoutId" v-bind="layoutOption"></component>
+  </el-config-provider>
 </template>
 
 <script lang="ts" setup>
@@ -8,7 +10,7 @@ import Layout from '@/layouts/index'
 import {useRoute} from "vue-router";
 import {computed, shallowRef, watchEffect} from "vue";
 import {LayoutEnum} from "@/layouts/types";
-
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 const route = useRoute()
 const layoutId = shallowRef<LayoutEnum>(LayoutEnum.default)
 const layoutOption = shallowRef({})

@@ -14,9 +14,15 @@ export default (app:App) => {
 }
 
 import {
-    Plus
+    Lock,
+    Plus,
+    User,
+    House
 } from '@element-plus/icons-vue'
 
 export const ElIconEnum = (() => ({
     plus: h(Plus),
+    house: h(House),
+    user: h(User),
+    logout: h(Lock)
 }))()
