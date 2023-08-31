@@ -17,8 +17,8 @@
 import { Expand, Fold} from '@element-plus/icons-vue'
 import {settingStore} from "@/store";
 import {computed, ComputedRef, VNode} from "vue";
-//@ts-ignore
-const icon:ComputedRef<VNode> = computed(() => settingStore.$state.menu.collapse
+
+const icon = computed(() => settingStore.$state.menu.collapse
     ? Expand
     : Fold
 )

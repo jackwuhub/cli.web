@@ -26,8 +26,8 @@ import {computed, ComputedRef, onMounted} from "vue";
 import {settingStore} from "@/store";
 
 const isLight:ComputedRef<boolean> = computed(() => settingStore.theme === 'dark')
-const handleChangeTheme = (dark:boolean) => {
-  const theme: 'light' | 'dark' = dark ? 'dark' : 'light'
+const handleChangeTheme = (val:boolean | string | number):any => {
+  const theme: 'light' | 'dark' = String(val) === 'true' ? 'dark' : 'light'
   settingStore.setTheme(theme)
   window.localStorage.setItem('theme',theme)
 }
