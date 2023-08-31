@@ -5,7 +5,7 @@ export const rootRouters:Array<RouterRaw> = [
     {
         path:'/',
         name:'home',
-        meta:{ title:'首页',layout: LayoutEnum.default },
+        meta:{ title:'首页',layout: LayoutEnum.admin },
         component: () => import('@/pages/home/index.vue')
     },
     {

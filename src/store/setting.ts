@@ -25,7 +25,7 @@ export default defineStore({
         setMenuList(menuList:any[] = []){ this.menu.menuList = menuList },
         /** 设置主题 */
         setTheme(theme:'light' | 'dark'){
-            document.documentElement.setAttribute('theme-mode', theme);
+            document.documentElement.setAttribute('class',theme)
             this.theme = theme
         }
     }

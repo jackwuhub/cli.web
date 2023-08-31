@@ -9,6 +9,7 @@ import directive from "@/directive";
 import {router} from '@/router'
 import routerMain from '@/router'
 import pinia from './store'
+import elementUI from "@/utils/elementUI/elementUI";
 const bootstrap = async () => {
     const app = createApp(App)
     // 注册全局自定义组件
@@ -17,6 +18,8 @@ const bootstrap = async () => {
     app.use(directive)
     // 加载pinia
     app.use(pinia)
+    // 加载elementUI
+    app.use(elementUI)
     // 注册router
     app.use(routerMain)
     // 等待路由加载完成
