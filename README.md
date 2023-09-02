@@ -6,8 +6,6 @@
 
 一个能够快速构建不同框架的模板库
 
-[![star](https://gitee.com/wuguangshuai/cli.web.node/badge/star.svg?theme=white)](https://gitee.com/wuguangshuai/cli.web.node/stargazers)
-[![fork](https://gitee.com/wuguangshuai/cli.web.node/badge/fork.svg?theme=dark)](https://gitee.com/wuguangshuai/cli.web.node/members)
 ![NPM](https://img.shields.io/npm/l/ldgy-cli)
 ![npm](https://img.shields.io/npm/v/ldgy-cli)
 ![npm collaborators](https://img.shields.io/npm/collaborators/ldgy-cli)
