@@ -6,8 +6,6 @@
 
 一个能够快速构建不同框架的模板库
 
-[![star](https://gitee.com/wuguangshuai/cli.web.node/badge/star.svg?theme=white)](https://gitee.com/wuguangshuai/cli.web.node/stargazers)
-[![fork](https://gitee.com/wuguangshuai/cli.web.node/badge/fork.svg?theme=dark)](https://gitee.com/wuguangshuai/cli.web.node/members)
 ![NPM](https://img.shields.io/npm/l/ldgy-cli)
 ![npm](https://img.shields.io/npm/v/ldgy-cli)
 ![npm collaborators](https://img.shields.io/npm/collaborators/ldgy-cli)
@@ -15,7 +13,6 @@
 ![npm bundle size](https://img.shields.io/bundlephobia/min/ldgy-cli)
 
 
-[![吴广帅/cli.web.node](https://gitee.com/wuguangshuai/cli.web.node/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/wuguangshuai/cli.web.node)
 
 </div>
 
@@ -23,7 +20,7 @@
 
 ## 特性
 
--  [Gtiee](https://gitee.com/wuguangshuai/cli.web.node) 工具包仓库地址。
+-  [github](https://github.com/jackwuhub/cli.web/tree/cli) 工具包仓库地址。
 
 
 ## 支持框架
@@ -62,13 +59,13 @@ $ yarn add ldgy-cli
 
 ## 仓库链接
 
-- [web-admin-vue3](https://gitee.com/wuguangshuai/cli.web.node/tree/web-admin-vue3/)
-- [web-admin-vue3-element](https://gitee.com/wuguangshuai/cli.web.node/tree/web-admin-vue3-element/)
-- [web-admin-vue3-antd](https://gitee.com/wuguangshuai/cli.web.node/tree/web-admin-vue3-antd/)
-- [web-admin-vue3-tdesign](https://gitee.com/wuguangshuai/cli.web.node/tree/web-admin-vue3-tdesign/)
-- [web-h5-vue3](https://gitee.com/wuguangshuai/cli.web.node.git)
-- [web-h5-vue3-tdesign](https://gitee.com/wuguangshuai/cli.web.node/tree/web-h5-vue3-tdsign/)
-- [wechat-miniProgram](https://gitee.com/wuguangshuai/cli.web.node/tree/web-wechat/)
-- [wechat-miniProgram-tdsign](https://gitee.com/wuguangshuai/cli.web.node/tree/web-wechat-tdsign/)
+- [web-admin-vue3](https://github.com/jackwuhub/cli.web/tree/web-admin-vue3)
+- [web-admin-vue3-element](https://github.com/jackwuhub/cli.web/tree/web-admin-vue3-element)
+- [web-admin-vue3-antd](https://github.com/jackwuhub/cli.web/tree/web-admin-vue3-antd)
+- [web-admin-vue3-tdesign](https://github.com/jackwuhub/cli.web/tree/web-admin-vue3-tdesign)
+- [web-h5-vue3](https://github.com/jackwuhub/cli.web/tree/web-h5-vue3)
+- [web-h5-vue3-tdesign](https://github.com/jackwuhub/cli.web/tree/web-h5-vue3-tdesign)
+- [wechat-miniProgram](https://github.com/jackwuhub/cli.web/tree/web-wechat)
+- [wechat-miniProgram-tdsign](https://github.com/jackwuhub/cli.web/tree/web-wechat-tdsign)
 
 
