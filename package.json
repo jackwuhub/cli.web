@@ -1,6 +1,6 @@
 {
   "name": "ldgy-cli",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "ldgy web cli init project",
   "bin": {
     "ldgy-cli": "./bin/index.js"
@@ -26,9 +26,6 @@
   },
   "main": "./bin/index.js",
   "typings": "dist/index.d.ts",
-  "engines": {
-    "node": "^16"
-  },
   "files": [
     "/bin",
     "/lib"
