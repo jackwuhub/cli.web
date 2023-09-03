@@ -1,6 +1,6 @@
 {
   "name": "ldgy-cli",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "ldgy web cli init project",
   "bin": {
     "ldgy-cli": "./bin/index.js"
