@@ -155,7 +155,14 @@
         {
             "title": "utils",
             "message": "请选择工具工具包类型",
-            "description": "快速构建一个方法工具"
+            "description": "快速构建一个方法工具",
+            "choices": [
+                {
+                    "title": "油猴脚本",
+                    "description": "使用vite + vue3快速构建油猴脚本",
+                    "value": "tampermonkey::https://gitee.com/wuguangshuai/cli.web.git"
+                }
+            ]
         }
     ]
 }
