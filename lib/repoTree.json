@@ -19,22 +19,22 @@
                                 {
                                     "title": "No UI",
                                     "description": "不使用UI库",
-                                    "value": "web-admin-vue3::https://github.com/jackwuhub/cli.web.git"
+                                    "value": "web-admin-vue3::https://gitee.com/wuguangshuai/cli.web.git"
                                 },
                                 {
                                     "title": "(推荐)TDesignUI",
                                     "description": "腾讯团队最新出品UI库",
-                                    "value": "web-admin-vue3-tdsign::https://github.com/jackwuhub/cli.web.git"
+                                    "value": "web-admin-vue3-tdesign::https://gitee.com/wuguangshuai/cli.web.git"
                                 },
                                 {
                                     "title": "elementUI",
                                     "description": "饿了么团队出品的UI库",
-                                    "value": "web-admin-vue3-element::https://github.com/jackwuhub/cli.web.git"
+                                    "value": "web-admin-vue3-element::https://gitee.com/wuguangshuai/cli.web.git"
                                 },
                                 {
                                     "title": "ant-design-vue",
                                     "description": "antd社区版出品",
-                                    "value": "web-admin-vue3-antd::https://github.com/jackwuhub/cli.web.git"
+                                    "value": "web-admin-vue3-antd::https://gitee.com/wuguangshuai/cli.web.git"
                                 }
                             ]
                         },
@@ -82,12 +82,12 @@
                                 {
                                     "title": "No UI",
                                     "description": "不使用UI库",
-                                    "value": "web-h5-vue3::https://github.com/jackwuhub/cli.web.git"
+                                    "value": "web-h5-vue3::https://gitee.com/wuguangshuai/cli.web.git"
                                 },
                                 {
                                     "title": "(推荐)TDesignUI-mobile",
                                     "description": "腾讯团队最新出品UI库",
-                                    "value": "web-h5-vue3-tdsign::https://github.com/jackwuhub/cli.web.git"
+                                    "value": "web-h5-vue3-tdsign::https://gitee.com/wuguangshuai/cli.web.git"
                                 },
                                 {
                                     "title": "vantUI",
@@ -132,12 +132,12 @@
                         {
                             "title": "No UI",
                             "description": "不使用UI库",
-                            "value": "web-wechat::https://github.com/jackwuhub/cli.web.git"
+                            "value": "web-wechat::https://gitee.com/wuguangshuai/cli.web.git"
                         },
                         {
                             "title": "(推荐)TDesignUIMiniProgram",
                             "description": "腾讯团队最新出品UI库",
-                            "value": "web-wechat-tdsign::https://github.com/jackwuhub/cli.web.git"
+                            "value": "web-wechat-tdsign::https://gitee.com/wuguangshuai/cli.web.git"
                         },
                         {
                             "title": "VantUI",
