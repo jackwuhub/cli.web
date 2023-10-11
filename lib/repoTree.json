@@ -160,7 +160,7 @@
                 {
                     "title": "油猴脚本",
                     "description": "使用vite + vue3快速构建油猴脚本",
-                    "value": "tampermonkey::https://gitee.com/wuguangshuai/cli.web.git"
+                    "value": "utils-tampermonkey::https://gitee.com/wuguangshuai/cli.web.git"
                 }
             ]
         }
